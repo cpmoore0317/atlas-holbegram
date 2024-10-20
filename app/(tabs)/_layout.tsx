@@ -37,7 +37,7 @@ export default function TabLayout() {
         options={{
           title: 'Add Post',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'add' : 'add-outline'} color={color} />
+            <TabBarIcon name={focused ? 'add-circle' : 'add-circle-outline'} color={color} />
           ),
         }}
       />
