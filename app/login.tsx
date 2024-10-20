@@ -12,7 +12,7 @@ export default function Page() {
 
       <Pressable
         onPress={() => {
-          router.push("/(tabs)/");
+          router.replace("/(tabs)/");
         }}
       >
         <Text>Sign In</Text>
