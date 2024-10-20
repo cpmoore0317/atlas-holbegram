@@ -1,11 +1,22 @@
-import { Link } from "expo-router";
-import { Text, View } from "react-native";
+import { Link, useRouter } from "expo-router";
+import { Text, View, Pressable } from "react-native";
 
 export default function Page() {
-    return <View style={{ flex: 1, alignItems: "center", justifyContent: "center"}}>
-        <Text>Login</Text>
-        <Link href="/register">
-            <Text>Create a new account</Text>
-        </Link>
+  const router = useRouter();
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text>Login</Text>
+      <Link href="/register" replace>
+        <Text>Create a new account</Text>
+      </Link>
+
+      <Pressable
+        onPress={() => {
+          router.push("/(tabs)/");
+        }}
+      >
+        <Text>Sign In</Text>
+      </Pressable>
     </View>
+  );
 }
