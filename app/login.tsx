@@ -33,10 +33,10 @@ export default function Page() {
           width: "80%",
           padding: 10,
           borderWidth: 1,
-          borderColor: Colors.blueLight,
-          backgroundColor: "white",
+          borderColor: Colors.teal,
           borderRadius: 5,
-          marginTop: 5,
+          marginTop: 10,
+          marginBottom: 5,
         }}
         keyboardType="email-address"
         autoCapitalize="none"
@@ -50,10 +50,10 @@ export default function Page() {
           width: "80%",
           padding: 10,
           borderWidth: 1,
-          borderColor: Colors.blueLight,
-          backgroundColor: "white",
+          borderColor: Colors.teal,
           borderRadius: 5,
           marginTop: 5,
+          marginBottom: 10,
         }}
         secureTextEntry
       />

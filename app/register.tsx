@@ -32,8 +32,7 @@ export default function Page() {
           width: "80%",
           padding: 10,
           borderWidth: 1,
-          borderColor: Colors.blueLight,
-          backgroundColor: "white",
+          borderColor: Colors.teal,
           borderRadius: 5,
           marginTop: 5,
         }}
@@ -49,10 +48,10 @@ export default function Page() {
           width: "80%",
           padding: 10,
           borderWidth: 1,
-          borderColor: Colors.blueLight,
-          backgroundColor: "white",
+          borderColor: Colors.teal,
           borderRadius: 5,
           marginTop: 5,
+          marginBottom: 5,
         }}
         secureTextEntry
       />
