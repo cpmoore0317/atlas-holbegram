@@ -7,6 +7,11 @@ import { useState } from "react";
 export default function Page() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  function register() {
+    alert(`Creating account with ${email} and ${password}`);
+  }
+
   return (
     <View
       style={{
@@ -57,9 +62,7 @@ export default function Page() {
         secureTextEntry
       />
       <Pressable
-        onPress={() => {
-          router.replace("/login");
-        }}
+        onPress={register}
         style={{
           width: "80%",
           padding: 10,
@@ -71,8 +74,8 @@ export default function Page() {
       >
         <Text style={{ color: "white", fontSize: 16 }}>Create Account</Text>
       </Pressable>
-      <Link href="/login" replace>
-        <Text style={{ color: "white" }}>Log in to an existing account</Text>
+      <Link href="/login" replace style={{ marginTop: 10 }}>
+        <Text style={{ color: "white" }}>Login to existing account</Text>
       </Link>
     </View>
   );

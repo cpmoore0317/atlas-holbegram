@@ -8,6 +8,10 @@ export default function Page() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  function login() {
+    alert(`Logging in with ${email} and ${password}`);
+  }
+
   return (
     <View
       style={{
@@ -58,9 +62,7 @@ export default function Page() {
         secureTextEntry
       />
       <Pressable
-        onPress={() => {
-          router.replace("/(tabs)/");
-        }}
+        onPress={login}
         style={{
           width: "80%",
           padding: 10,
