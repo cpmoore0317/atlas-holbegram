@@ -15,9 +15,9 @@ export default function Page() {
     >
       <Image
         source={require("@/assets/images/atlas-logo.png")}
-        style={{ width: 300, height: 300, resizeMode: "contain" }}
+        style={{ width: 200, height: 200, resizeMode: "contain" }}
       />
-      <Text style={{ color: "white" }}>Register</Text>
+      <Text style={{ color: "white", fontSize: 20, fontWeight: "bold" }}>Register</Text>
       <Link href="/login" replace>
         <Text style={{ color: "white" }}>Log in to an existing account</Text>
       </Link>

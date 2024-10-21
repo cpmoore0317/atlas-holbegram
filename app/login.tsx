@@ -16,13 +16,11 @@ export default function Page() {
     >
       <Image
         source={require("@/assets/images/atlas-logo.png")}
-        style={{ width: 300, height: 300, resizeMode: "contain" }}
+        style={{ width: 200, height: 200, resizeMode: "contain" }}
       />
-      <Text style={{ color: "white" }}>Login</Text>
-      <Link href="/register" replace>
-        <Text style={{ color: "white" }}>Create a new account</Text>
-      </Link>
-
+      <Text style={{ color: "white", fontSize: 20, fontWeight: "bold" }}>
+        Login
+      </Text>
       <Pressable
         onPress={() => {
           router.replace("/(tabs)/");
@@ -30,6 +28,9 @@ export default function Page() {
       >
         <Text style={{ color: "white" }}>Sign In</Text>
       </Pressable>
+      <Link href="/register" replace>
+        <Text style={{ color: "white" }}>Create a new account</Text>
+      </Link>
     </View>
   );
 }
