@@ -1,5 +1,5 @@
-import { Link } from "expo-router";
-import { Text, View, Image, TextInput } from "react-native";
+import { Link, router } from "expo-router";
+import { Text, View, Image, TextInput, Pressable } from "react-native";
 
 import { Colors } from "./Colors";
 import { useState } from "react";
@@ -56,7 +56,21 @@ export default function Page() {
         }}
         secureTextEntry
       />
-      <Text style={{ color: "white" }}>Create Account</Text>
+      <Pressable
+        onPress={() => {
+          router.replace("/login");
+        }}
+        style={{
+          width: "80%",
+          padding: 10,
+          backgroundColor: Colors.teal,
+          borderRadius: 5,
+          alignItems: "center",
+          marginTop: 10,
+        }}
+      >
+        <Text style={{ color: "white", fontSize: 16 }}>Create Account</Text>
+      </Pressable>
       <Link href="/login" replace>
         <Text style={{ color: "white" }}>Log in to an existing account</Text>
       </Link>

@@ -1,13 +1,13 @@
 import { Link, useRouter } from "expo-router";
 import { Text, View, Pressable, Image, TextInput } from "react-native";
-
-import { Colors } from "./Colors";
 import { useState } from "react";
+import { Colors } from "./Colors";
 
 export default function Page() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   return (
     <View
       style={{
@@ -61,10 +61,18 @@ export default function Page() {
         onPress={() => {
           router.replace("/(tabs)/");
         }}
+        style={{
+          width: "80%",
+          padding: 10,
+          backgroundColor: Colors.teal,
+          borderRadius: 5,
+          alignItems: "center",
+          marginTop: 10,
+        }}
       >
-        <Text style={{ color: "white" }}>Sign In</Text>
+        <Text style={{ color: "white", fontSize: 16 }}>Sign In</Text>
       </Pressable>
-      <Link href="/register" replace>
+      <Link href="/register" replace style={{ marginTop: 10 }}>
         <Text style={{ color: "white" }}>Create a new account</Text>
       </Link>
     </View>
