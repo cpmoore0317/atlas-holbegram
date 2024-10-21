@@ -34,7 +34,8 @@ export default function Page() {
           borderWidth: 1,
           borderColor: Colors.teal,
           borderRadius: 5,
-          marginTop: 5,
+          marginTop: 10,
+          marginBottom: 5,
         }}
         keyboardType="email-address"
         autoCapitalize="none"
@@ -51,7 +52,7 @@ export default function Page() {
           borderColor: Colors.teal,
           borderRadius: 5,
           marginTop: 5,
-          marginBottom: 5,
+          marginBottom: 10,
         }}
         secureTextEntry
       />
