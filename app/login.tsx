@@ -1,10 +1,13 @@
 import { Link, useRouter } from "expo-router";
-import { Text, View, Pressable, Image } from "react-native";
+import { Text, View, Pressable, Image, TextInput } from "react-native";
 
 import { Colors } from "./Colors";
+import { useState } from "react";
 
 export default function Page() {
   const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <View
       style={{
@@ -21,6 +24,39 @@ export default function Page() {
       <Text style={{ color: "white", fontSize: 20, fontWeight: "bold" }}>
         Login
       </Text>
+      <TextInput
+        value={email}
+        onChangeText={setEmail}
+        placeholder="Email"
+        placeholderTextColor="#CCCCCC"
+        style={{
+          width: "80%",
+          padding: 10,
+          borderWidth: 1,
+          borderColor: Colors.blueLight,
+          backgroundColor: "white",
+          borderRadius: 5,
+          marginTop: 5,
+        }}
+        keyboardType="email-address"
+        autoCapitalize="none"
+      />
+      <TextInput
+        value={password}
+        onChangeText={setPassword}
+        placeholder="Password"
+        placeholderTextColor="#CCCCCC"
+        style={{
+          width: "80%",
+          padding: 10,
+          borderWidth: 1,
+          borderColor: Colors.blueLight,
+          backgroundColor: "white",
+          borderRadius: 5,
+          marginTop: 5,
+        }}
+        secureTextEntry
+      />
       <Pressable
         onPress={() => {
           router.replace("/(tabs)/");
