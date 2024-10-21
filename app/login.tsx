@@ -2,6 +2,7 @@ import { Link, useRouter } from "expo-router";
 import { Text, View, Pressable, Image } from "react-native";
 
 import { Colors } from "./Colors";
+
 export default function Page() {
   const router = useRouter();
   return (
