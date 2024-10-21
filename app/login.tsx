@@ -41,6 +41,7 @@ export default function Page() {
           borderRadius: 5,
           marginTop: 10,
           marginBottom: 5,
+          color: "white",
         }}
         keyboardType="email-address"
         autoCapitalize="none"
@@ -58,6 +59,7 @@ export default function Page() {
           borderRadius: 5,
           marginTop: 5,
           marginBottom: 10,
+          color: "white",
         }}
         secureTextEntry
       />
