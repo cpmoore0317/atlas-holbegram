@@ -1,11 +1,16 @@
+import { auth } from "@/firebaseConfig";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useRouter } from "expo-router";
 import { Pressable } from "react-native";
+import { useAuth } from "./AuthProvider";
+
 
 export function LogoutComponent() {
   const router = useRouter();
+  const auth = useAuth();
 
-  function logout() {
+  async function logout() {
+    await auth.logout();
     router.replace("/login");
   }
 
