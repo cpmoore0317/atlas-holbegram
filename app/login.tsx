@@ -2,14 +2,21 @@ import { Link, useRouter } from "expo-router";
 import { Text, View, Pressable, Image, TextInput } from "react-native";
 import { useState } from "react";
 import { Colors } from "./Colors";
+import { useAuth } from "@/components/AuthProvider";
 
 export default function Page() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const auth = useAuth();
 
-  function login() {
-    alert(`Logging in with ${email} and ${password}`);
+  async function login() {
+    try { 
+      await auth.login(email, password);
+      router.replace("/(tabs)/");
+    } catch (err) {
+      alert("Email or password is incorrect")
+    }
   }
 
   return (

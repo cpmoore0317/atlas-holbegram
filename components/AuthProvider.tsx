@@ -1,12 +1,13 @@
 import { auth } from "@/firebaseConfig";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { createContext, ReactNode, useContext } from "react"
 
-const AuthContext = createContext({ register, logout });
+const AuthContext = createContext({ register, logout, login });
 
 type AuthContextType = {
     register: (email: string, password: string) => void
     logout: () => void
+    login: (email: string, password: string) => void
 }
 
 export const useAuth = () => useContext(AuthContext);
@@ -19,6 +20,10 @@ function logout() {
     auth.signOut();
 }
 
+function login( email: string, password: string) {
+    return signInWithEmailAndPassword(auth, email, password);
+}
+
 export function AuthProvider({ children }: { children: ReactNode }) {
-    return <AuthContext.Provider value={{ register, logout }}>{children}</AuthContext.Provider>
+    return <AuthContext.Provider value={{ register, logout, login }}>{children}</AuthContext.Provider>
 }
