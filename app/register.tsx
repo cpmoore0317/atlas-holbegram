@@ -1,15 +1,23 @@
-import { Link, router } from "expo-router";
+import { Link, router, useRouter } from "expo-router";
 import { Text, View, Image, TextInput, Pressable } from "react-native";
 
 import { Colors } from "./Colors";
 import { useState } from "react";
+import { useAuth } from "@/components/AuthProvider";
 
 export default function Page() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const auth = useAuth();
+  const router = useRouter()
 
-  function register() {
-    alert(`Creating account with ${email} and ${password}`);
+  async function register() {
+    try {
+      await auth.register(email, password);
+      router.replace("/(tabs)/")
+    } catch (err) {
+      alert("Unable to create account");
+    }
   }
 
   return (
