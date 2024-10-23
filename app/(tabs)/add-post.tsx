@@ -13,7 +13,7 @@ export default function Page() {
     >
       <Image
         source={require("@/assets/images/cover-art.png")}
-        style={{ width: 300, height: 300, resizeMode: "contain", borderRadius: 7 }}
+        style={{ width: 300, height: 300, resizeMode: "contain", borderRadius: 14 }}
       />
       <Pressable
         style={{
