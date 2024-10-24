@@ -52,7 +52,7 @@ export default function Page() {
             width: "80%",
             padding: 10,
             borderWidth: 1,
-            borderColor: "#ddd",
+            borderColor: Colors.teal,
             borderRadius: 7,
             marginTop: 20,
           }}
@@ -92,13 +92,12 @@ export default function Page() {
           style={{
             width: "80%",
             padding: 14,
-            backgroundColor: Colors.teal,
             borderRadius: 7,
             alignItems: "center",
             marginTop: 10,
           }}
         >
-          <Text style={{ color: "white", fontSize: 16 }}>Reset</Text>
+          <Text style={{ color: "black", fontSize: 16 }}>Reset</Text>
         </Pressable>
       )}
     </View>
