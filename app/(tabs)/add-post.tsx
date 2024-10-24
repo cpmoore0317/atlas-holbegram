@@ -2,11 +2,22 @@ import { Pressable, Text, View, Image, TextInput } from "react-native";
 import { useState } from "react";
 import { Colors } from "../Colors";
 import { useImagePicker } from "@/hooks/useImagePicker";
+import storage from "@/lib/storage";
 
 export default function Page() {
   const { image, openImagePicker, reset } = useImagePicker();
   const [description, setDescription] = useState("");
   const [isPhotoSelected, setIsPhotoSelected] = useState(false);
+
+  async function save() {
+    if (image) {
+      const name = image.split("/").pop() as string;
+      const { downloadUrl, metadata } = await storage.upload(image, name);
+      console.log(downloadUrl);
+    } else {
+      console.error("No image selected.");
+    }
+  }
 
   return (
     <View
@@ -43,6 +54,7 @@ export default function Page() {
         onPress={() => {
           if (isPhotoSelected) {
             alert(`Image saved with description: ${description}`);
+            save();
           } else {
             openImagePicker().then(() => setIsPhotoSelected(true));
           }
