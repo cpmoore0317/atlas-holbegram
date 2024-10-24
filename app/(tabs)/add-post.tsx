@@ -7,7 +7,7 @@ import firestore from "@/lib/firestore";
 import { useAuth } from "@/components/AuthProvider";
 
 export default function Page() {
-  const { image, openImagePicker, reset } = useImagePicker();
+  const { image, openImagePicker, setImage } = useImagePicker();
   const [description, setDescription] = useState("");
   const [isPhotoSelected, setIsPhotoSelected] = useState(false);
   const auth = useAuth();
@@ -85,9 +85,9 @@ export default function Page() {
       {isPhotoSelected && (
         <Pressable
           onPress={() => {
-            reset();
             setIsPhotoSelected(false);
             setDescription("");
+            setImage(undefined);
           }}
           style={{
             width: "80%",
