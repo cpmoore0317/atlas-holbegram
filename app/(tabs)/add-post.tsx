@@ -5,8 +5,8 @@ import { useImagePicker } from "@/hooks/useImagePicker";
 
 export default function Page() {
   const { image, openImagePicker, reset } = useImagePicker();
-  const [description, setDescription] = useState(""); // To track the description
-  const [isPhotoSelected, setIsPhotoSelected] = useState(false); // To toggle between button states
+  const [description, setDescription] = useState("");
+  const [isPhotoSelected, setIsPhotoSelected] = useState(false);
 
   return (
     <View
