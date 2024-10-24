@@ -3,17 +3,26 @@ import { useState } from "react";
 import { Colors } from "../Colors";
 import { useImagePicker } from "@/hooks/useImagePicker";
 import storage from "@/lib/storage";
+import firestore from "@/lib/firestore";
+import { useAuth } from "@/components/AuthProvider";
 
 export default function Page() {
   const { image, openImagePicker, reset } = useImagePicker();
   const [description, setDescription] = useState("");
   const [isPhotoSelected, setIsPhotoSelected] = useState(false);
+  const auth = useAuth();
 
   async function save() {
     if (image) {
       const name = image.split("/").pop() as string;
       const { downloadUrl, metadata } = await storage.upload(image, name);
       console.log(downloadUrl);
+      firestore.addPost({
+        description,
+        image: downloadUrl,
+        createdAt: new Date(),
+        createdBy: auth.user?.uid!!,
+      });
     } else {
       console.error("No image selected.");
     }
